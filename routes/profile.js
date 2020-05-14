@@ -3,6 +3,7 @@ const router = express.Router();
 const fetch = require('node-fetch');
 
 router.get('/:platform/:gamertag', async (req, res) => {
+  console.log('Received A GET Request');
   try {
     const headers = {
       'TRN-Api-Key': process.env.TRACKER_API_KEY

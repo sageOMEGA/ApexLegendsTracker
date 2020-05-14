@@ -1,10 +1,15 @@
 import React from 'react';
+import { Card } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from './components/Form'
+import Dropdown from './components/Dropdown'
 
 const App = () => {
   return (
-    <div className="App">
-     
-    </div>
+    <Card style={{ width: '18rem' }}>
+      <Dropdown />
+      <Form />
+    </Card>
   );
 }
 
