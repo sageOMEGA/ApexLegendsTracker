@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-// const cors = require("cors");
+const cors = require("cors");
 
 //Load ENV
 dotenv.config({ path: "./config.env" });
@@ -10,7 +10,7 @@ dotenv.config({ path: "./config.env" });
 const app = express();
 
 // CORS
-// app.use(cors());
+app.use(cors());
 
 //Dev Loging
 if (process.env.NODE_ENV === "development") {

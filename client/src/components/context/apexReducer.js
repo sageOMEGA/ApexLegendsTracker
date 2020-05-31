@@ -1,11 +1,16 @@
-import { GET_GAMER } from "./types";
+import { METADATA, PLATFORM_INFO } from "./types";
 
 export default (state, action) => {
   switch (action.type) {
-    case GET_GAMER:
+    case METADATA:
       return {
         ...state,
-        gamer: action.payload,
+        metadata: action.payload,
+      };
+    case PLATFORM_INFO:
+      return {
+        ...state,
+        platformInfo: action.payload,
       };
     default:
       return {

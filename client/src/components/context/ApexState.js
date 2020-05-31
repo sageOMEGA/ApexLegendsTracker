@@ -2,11 +2,12 @@ import React, { useReducer } from "react";
 import Axios from "axios";
 import ApexContext from "./apexContext";
 import ApexReducer from "./apexReducer";
-import { GET_GAMER } from "./types";
+import { METADATA, PLATFORM_INFO } from "./types";
 
 const ApexState = (props) => {
   const InitialState = {
-    gamer: {},
+    metadata: {},
+    platformInfo: {},
   };
 
   // Iniialize Reducer
@@ -17,17 +18,23 @@ const ApexState = (props) => {
     const res = await Axios.get(
       `http://localhost:5000/api/v2/profile/${platform}/${gamerId}`
     );
+
     dispatch({
-      type: GET_GAMER,
-      payload: res.data,
+      type: METADATA,
+      payload: res.data.data.metadata,
     });
-    console.log(res.data);
+
+    dispatch({
+      type: PLATFORM_INFO,
+      payload: res.data.data.platformInfo,
+    });
   };
 
   return (
     <ApexContext.Provider
       value={{
-        gamer: state.gamer,
+        metadata: state.metadata,
+        platformInfo: state.platformInfo,
         getGamer,
       }}
     >
