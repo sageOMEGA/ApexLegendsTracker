@@ -1,33 +1,37 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
-router.get('/:platform/:gamertag', async (req, res) => {
-  console.log('Received A GET Request');
+router.get("/:platform/:gamertag", async (req, res) => {
+  console.log("Received A GET Request");
   try {
     const headers = {
-      'TRN-Api-Key': process.env.TRACKER_API_KEY
-    }
+      "TRN-Api-Key": process.env.TRACKER_API_KEY,
+      "Access-Control-Allow-Origin": "*",
+    };
 
     const { platform, gamertag } = req.params;
 
-    const response = await fetch(`${process.env.TRACKER_API_URL}/profile/${platform}/${gamertag}`,{
-      headers
-    });
+    const response = await fetch(
+      `${process.env.TRACKER_API_URL}/profile/${platform}/${gamertag}`,
+      {
+        headers,
+      }
+    );
 
     const data = await response.json();
-    if(data.errors && data.errors.length > 0) {
+    if (data.errors && data.errors.length > 0) {
       return res.status(404).json({
-        message: 'Profile Not Found'
-      })
+        message: "Profile Not Found",
+      });
     }
-    res.json(data); 
+    res.json(data);
   } catch (err) {
     console.error(err);
     res.status(500).json({
-      message: 'Server Error'
-    })
+      message: "Server Error",
+    });
   }
-})
+});
 
 module.exports = router;
