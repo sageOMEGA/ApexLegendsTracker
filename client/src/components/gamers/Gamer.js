@@ -8,7 +8,7 @@ const Gamer = ({ match }) => {
 
   useEffect(() => {
     getGamer(match.params.platform, match.params.gamerId);
-  });
+  }, []);
 
   return <div>Hello Gamers</div>;
 };

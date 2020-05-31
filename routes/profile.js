@@ -7,7 +7,6 @@ router.get("/:platform/:gamertag", async (req, res) => {
   try {
     const headers = {
       "TRN-Api-Key": process.env.TRACKER_API_KEY,
-      "Access-Control-Allow-Origin": "*",
     };
 
     const { platform, gamertag } = req.params;

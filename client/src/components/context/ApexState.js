@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import Axios from "axios";
 import ApexContext from "./apexContext";
-import ApexReducer from "./apexContext";
+import ApexReducer from "./apexReducer";
 import { GET_GAMER } from "./types";
 
 const ApexState = (props) => {
@@ -19,9 +19,9 @@ const ApexState = (props) => {
     );
     dispatch({
       type: GET_GAMER,
-      payload: res,
+      payload: res.data,
     });
-    console.log(platform);
+    console.log(res.data);
   };
 
   return (

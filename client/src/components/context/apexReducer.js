@@ -7,5 +7,9 @@ export default (state, action) => {
         ...state,
         gamer: action.payload,
       };
+    default:
+      return {
+        state,
+      };
   }
 };
