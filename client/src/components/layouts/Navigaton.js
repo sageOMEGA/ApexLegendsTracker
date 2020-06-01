@@ -19,14 +19,6 @@ const Navigation = () => {
             </Navbar.Brand>
           </Link>
         </div>
-
-        <div className="ml-auto">
-          <Link to="/">
-            <button className="ui button" style={{ backgroundColor: "white" }}>
-              Home
-            </button>
-          </Link>
-        </div>
       </Navbar>
     </Fragment>
   );

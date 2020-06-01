@@ -1,4 +1,4 @@
-import { METADATA, PLATFORM_INFO } from "./types";
+import { METADATA, PLATFORM_INFO, STATS } from "./types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -11,6 +11,11 @@ export default (state, action) => {
       return {
         ...state,
         platformInfo: action.payload,
+      };
+    case STATS:
+      return {
+        ...state,
+        overallStats: action.payload,
       };
     default:
       return {

@@ -2,12 +2,13 @@ import React, { useReducer } from "react";
 import Axios from "axios";
 import ApexContext from "./apexContext";
 import ApexReducer from "./apexReducer";
-import { METADATA, PLATFORM_INFO } from "./types";
+import { METADATA, PLATFORM_INFO, STATS } from "./types";
 
 const ApexState = (props) => {
   const InitialState = {
     metadata: {},
     platformInfo: {},
+    overallStats: {},
   };
 
   // Iniialize Reducer
@@ -28,6 +29,11 @@ const ApexState = (props) => {
       type: PLATFORM_INFO,
       payload: res.data.data.platformInfo,
     });
+
+    dispatch({
+      type: STATS,
+      payload: res.data.data.segments[0].stats,
+    });
   };
 
   return (
@@ -35,6 +41,7 @@ const ApexState = (props) => {
       value={{
         metadata: state.metadata,
         platformInfo: state.platformInfo,
+        overallStats: state.overallStats,
         getGamer,
       }}
     >

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import ApexContext from "../context/apexContext";
 
 const HomeContainer = () => {
-  // const apexContext = useContext(ApexContext);
-
   const [platform, setPlatform] = useState("psn");
   const [gamerId, setGamerId] = useState("");
 
