@@ -1,3 +1,3 @@
-export const METADATA = "METADATA";
-export const PLATFORM_INFO = "PLATFORM_INFO";
-export const STATS = "STATS";
+export const LOADING_TRUE = "LOADING_TRUE";
+export const LOADING_FALSE = "LOADING_FALSE";
+export const GAMER = "GAMER";

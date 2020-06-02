@@ -2,13 +2,20 @@ import React, { useReducer } from "react";
 import Axios from "axios";
 import ApexContext from "./apexContext";
 import ApexReducer from "./apexReducer";
-import { METADATA, PLATFORM_INFO, STATS } from "./types";
+import { LOADING_TRUE, LOADING_FALSE, GAMER } from "./types";
 
 const ApexState = (props) => {
   const InitialState = {
-    metadata: {},
-    platformInfo: {},
-    overallStats: {},
+    loading: false,
+    gamer: {},
+  };
+
+  const isEmpty = (obj) => {
+    if (Object.keys(obj).length === 0) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   // Iniialize Reducer
@@ -16,33 +23,31 @@ const ApexState = (props) => {
 
   // Finding The Specific Gamer Details
   const getGamer = async (platform, gamerId) => {
+    dispatch({
+      type: LOADING_TRUE,
+    });
+
     const res = await Axios.get(
       `http://localhost:5000/api/v2/profile/${platform}/${gamerId}`
     );
 
     dispatch({
-      type: METADATA,
-      payload: res.data.data.metadata,
+      type: GAMER,
+      payload: res.data.data,
     });
 
     dispatch({
-      type: PLATFORM_INFO,
-      payload: res.data.data.platformInfo,
-    });
-
-    dispatch({
-      type: STATS,
-      payload: res.data.data.segments[0].stats,
+      type: LOADING_FALSE,
     });
   };
 
   return (
     <ApexContext.Provider
       value={{
-        metadata: state.metadata,
-        platformInfo: state.platformInfo,
-        overallStats: state.overallStats,
+        loading: state.loading,
+        gamer: state.gamer,
         getGamer,
+        isEmpty,
       }}
     >
       {props.children}

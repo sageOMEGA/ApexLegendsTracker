@@ -1,21 +1,21 @@
-import { METADATA, PLATFORM_INFO, STATS } from "./types";
+import { LOADING_TRUE, LOADING_FALSE, GAMER } from "./types";
 
 export default (state, action) => {
   switch (action.type) {
-    case METADATA:
+    case GAMER:
       return {
         ...state,
-        metadata: action.payload,
+        gamer: action.payload,
       };
-    case PLATFORM_INFO:
+    case LOADING_TRUE:
       return {
         ...state,
-        platformInfo: action.payload,
+        loading: true,
       };
-    case STATS:
+    case LOADING_FALSE:
       return {
         ...state,
-        overallStats: action.payload,
+        loading: false,
       };
     default:
       return {
