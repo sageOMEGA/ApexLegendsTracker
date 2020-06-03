@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, Fragment } from "react";
 import Overview from "./Overview";
-import ActiveLegend from "./ActiveLegend";
 import ApexContext from "../context/apexContext";
 import { Spinner } from "react-bootstrap";
 
