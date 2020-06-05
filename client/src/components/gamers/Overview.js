@@ -6,12 +6,12 @@ import Kills from "./stats/Kills";
 import Damage from "./stats/Damage";
 import Season4Wins from "./stats/Season4Wins";
 import Season5Wins from "./stats/Season5Wins";
-import ActiveLegend from "./legends/ActiveLegend";
+import Legends from "./legends/Legends";
 
 const Overview = () => {
   const apexContext = useContext(ApexContext);
   const { gamer } = apexContext;
-  const { platformInfo, metadata, segments } = gamer;
+  const { segments } = gamer;
 
   return (
     <div>
@@ -88,11 +88,10 @@ const Overview = () => {
             Legends Overview
           </h1>
         </div>
-
+        <br />
         {/* Legends Specific Stats */}
-        <div style={{ display: "flex" }}>
-          <ActiveLegend />
-        </div>
+        <Legends />
+        <div></div>
       </div>
     </div>
   );

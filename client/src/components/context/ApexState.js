@@ -3,6 +3,19 @@ import Axios from "axios";
 import ApexContext from "./apexContext";
 import ApexReducer from "./apexReducer";
 import { LOADING_TRUE, LOADING_FALSE, GAMER } from "./types";
+import Lifeline from "../Images/Lifeline.png";
+import Wraith from "../Images/Wraith.png";
+import Bloodhound from "../Images/Bloodhound.png";
+import Pathfinder from "../Images/Pathfinder.png";
+import Caustic from "../Images/Caustic.png";
+import Revenant from "../Images/Revenant.png";
+import Loba from "../Images/Loba.png";
+import Gibraltar from "../Images/Gibraltar.png";
+import Wattson from "../Images/Wattson.png";
+import Octane from "../Images/Octane.png";
+import Bangalore from "../Images/Bangalore.png";
+import Crypto from "../Images/Crypto.png";
+import Mirage from "../Images/Mirage.png";
 
 const ApexState = (props) => {
   const InitialState = {
@@ -48,6 +61,19 @@ const ApexState = (props) => {
         gamer: state.gamer,
         getGamer,
         isEmpty,
+        Lifeline,
+        Wraith,
+        Crypto,
+        Mirage,
+        Bloodhound,
+        Bangalore,
+        Octane,
+        Wattson,
+        Caustic,
+        Gibraltar,
+        Pathfinder,
+        Loba,
+        Revenant,
       }}
     >
       {props.children}

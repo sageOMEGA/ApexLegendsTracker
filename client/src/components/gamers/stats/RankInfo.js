@@ -4,7 +4,7 @@ import ApexContext from "../../context/apexContext";
 const RankInfo = () => {
   const apexContext = useContext(ApexContext);
   const { gamer } = apexContext;
-  const { platformInfo, metadata, segments } = gamer;
+  const { segments } = gamer;
 
   return (
     <div

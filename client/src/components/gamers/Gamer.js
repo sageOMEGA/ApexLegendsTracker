@@ -55,6 +55,7 @@ const Gamer = ({ match }, props) => {
               </h2>
             </div>
           </div>
+          <br />
           <Overview />
         </div>
       </Fragment>
