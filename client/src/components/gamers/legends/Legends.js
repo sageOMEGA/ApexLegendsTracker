@@ -55,47 +55,51 @@ const ActiveLegend = () => {
   };
 
   const LegendDiv = (segmentValue) => {
-    return (
-      <div>
-        <img
-          src={LegendImage(segments[segmentValue].metadata.name)}
-          alt=""
-          className="ui card"
-          style={{ height: "438px", width: "290px", margin: "30px" }}
-        />
-        <div
-          className="ui raised card"
-          style={{
-            height: "100px",
-            width: "290px",
-            margin: "30px",
-            backgroundColor: "#333333",
-            color: "#EFEFEF",
-          }}
-        >
-          <div style={{ display: "flex" }}>
-            {segments[segmentValue].stats.kills ? (
-              <div style={{ margin: "10px" }}>
-                <h3>Kills</h3>
-                <h1 style={{ marginTop: "-20px", fontSize: "45px" }}>
-                  {" "}
-                  {segments[segmentValue].stats.kills.displayValue}
-                </h1>
-              </div>
-            ) : null}
-            {segments[segmentValue].stats.season5Kills ? (
-              <div style={{ margin: "10px", marginLeft: "30px" }}>
-                <h3>Season 5 Kills</h3>
-                <h1 style={{ marginTop: "-20px", fontSize: "45px" }}>
-                  {" "}
-                  {segments[segmentValue].stats.season5Kills.displayValue}
-                </h1>
-              </div>
-            ) : null}
+    if (segments[segmentValue].metadata.name !== "Unknown") {
+      return (
+        <div>
+          <img
+            src={LegendImage(segments[segmentValue].metadata.name)}
+            alt=""
+            className="ui card"
+            style={{ height: "438px", width: "290px", margin: "30px" }}
+          />
+          <div
+            className="ui raised card"
+            style={{
+              height: "100px",
+              width: "290px",
+              margin: "30px",
+              backgroundColor: "#333333",
+              color: "#EFEFEF",
+            }}
+          >
+            <div style={{ display: "flex", marginTop: "10px" }}>
+              {segments[segmentValue].stats.kills ? (
+                <div style={{ margin: "10px" }}>
+                  <h3>Kills</h3>
+                  <h1 style={{ marginTop: "-20px", fontSize: "35px" }}>
+                    {" "}
+                    {segments[segmentValue].stats.kills.displayValue}
+                  </h1>
+                </div>
+              ) : null}
+              {segments[segmentValue].stats.season5Kills ? (
+                <div style={{ margin: "10px", marginLeft: "15px" }}>
+                  <h3>Season 5 Kills</h3>
+                  <h1 style={{ marginTop: "-20px", fontSize: "35px" }}>
+                    {" "}
+                    {segments[segmentValue].stats.season5Kills.displayValue}
+                  </h1>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -107,7 +111,12 @@ const ActiveLegend = () => {
         }}
       >
         <div
-          style={{ display: "flex", marginLeft: "40px", marginRight: "40px" }}
+          style={{
+            display: "flex",
+            marginLeft: "40px",
+            marginRight: "40px",
+            maxWidth: "100%",
+          }}
         >
           {segments[1] ? LegendDiv(1) : null}
 

@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import HomeContainer from "../layouts/HomeContainer";
 
 const Home = () => {
   return (
-    <Fragment>
+    <div className="fluid">
       <HomeContainer />
-    </Fragment>
+    </div>
   );
 };
 

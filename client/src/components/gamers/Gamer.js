@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, Fragment } from "react";
+import React, { useEffect, useContext } from "react";
 import Overview from "./Overview";
 import ApexContext from "../context/apexContext";
 import { Spinner } from "react-bootstrap";
@@ -6,7 +6,7 @@ import { Spinner } from "react-bootstrap";
 const Gamer = ({ match }, props) => {
   const apexContext = useContext(ApexContext);
   const { getGamer, loading, gamer, isEmpty } = apexContext;
-  const { platformInfo } = gamer;
+  const { platformInfo, segments } = gamer;
 
   const originIcon = "https://img.icons8.com/color/48/000000/origin.png";
   const psnIcon = "https://img.icons8.com/color/48/000000/play-station.png";
@@ -37,7 +37,7 @@ const Gamer = ({ match }, props) => {
     );
   } else {
     return (
-      <Fragment>
+      <div style={{ display: "flex" }}>
         <div>
           <div
             style={{ display: "flex", marginTop: "20px", marginLeft: "20px" }}
@@ -58,7 +58,23 @@ const Gamer = ({ match }, props) => {
           <br />
           <Overview />
         </div>
-      </Fragment>
+
+        <div>
+          <div class style={{ position: "sticky", top: 80 }}>
+            <img
+              src={segments[1].metadata.tallImageUrl}
+              className="fluid"
+              alt=""
+              style={{
+                height: "671px",
+                Width: "359px",
+                display: "block",
+                marginTop: "10px",
+              }}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 };

@@ -12,8 +12,8 @@ const Kills = () => {
     <div
       className="ui raised card"
       style={{
-        width: "17rem",
-        margin: "10px",
+        width: "18rem",
+        margin: "5px",
         backgroundColor: "#333333",
         color: "#EFEFEF",
         display: "iniline-block",

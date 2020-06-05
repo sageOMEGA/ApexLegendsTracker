@@ -10,8 +10,8 @@ const Damage = () => {
     <div
       className="ui raised card"
       style={{
-        width: "17rem",
-        margin: "10px",
+        width: "18rem",
+        margin: "5px",
         backgroundColor: "#333333",
         color: "#EFEFEF",
         display: "iniline-block",
@@ -19,10 +19,10 @@ const Damage = () => {
     >
       <div style={{ margin: "10px" }}>
         <h3>Damage</h3>
-        <h1 style={{ marginTop: "-20px", fontSize: "45px" }}>
+        <h1 style={{ marginTop: "-20px", fontSize: "38px" }}>
           {segments[0].stats.damage.displayValue}
         </h1>
-        <p style={{ marginTop: "-20px" }}>
+        <p style={{ marginTop: "-10px" }}>
           Top {100 - segments[0].stats.damage.percentile}%{" "}
         </p>
       </div>

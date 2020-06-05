@@ -10,8 +10,8 @@ const Season4Wins = () => {
     <div
       className="ui raised card"
       style={{
-        width: "17rem",
-        margin: "10px",
+        width: "14rem",
+        margin: "5px",
         backgroundColor: "#333333",
         color: "#EFEFEF",
       }}
