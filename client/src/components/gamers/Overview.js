@@ -45,12 +45,12 @@ const Overview = () => {
         <br />
         {/* Rank info Portion */}
         <RankInfo />
-
+        {/* <br /> */}
         {/* small cards of level, kills, damage and times placed top 3 */}
         <div
           style={{
             display: "flex",
-            marginTop: "-50px",
+            marginTop: "-45px",
             alignContent: "center",
           }}
         >
