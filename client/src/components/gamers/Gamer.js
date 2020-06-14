@@ -37,7 +37,7 @@ const Gamer = ({ match }, props) => {
     );
   } else {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "70% 30%" }}>
         <div>
           <div
             style={{ display: "flex", marginTop: "20px", marginLeft: "20px" }}
@@ -60,16 +60,15 @@ const Gamer = ({ match }, props) => {
         </div>
 
         <div>
-          <div class style={{ position: "sticky", top: 80 }}>
+          <div style={{ position: "sticky", top: 80 }}>
             <img
               src={segments[1].metadata.tallImageUrl}
               className="fluid"
               alt=""
               style={{
                 height: "671px",
-                Width: "359px",
-                display: "block",
-                marginTop: "10px",
+                marginLeft: "50px",
+                marginTop: "2px",
               }}
             />
           </div>

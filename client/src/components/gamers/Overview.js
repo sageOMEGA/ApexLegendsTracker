@@ -91,7 +91,6 @@ const Overview = () => {
         <br />
         {/* Legends Specific Stats */}
         <Legends />
-        <div></div>
       </div>
     </div>
   );

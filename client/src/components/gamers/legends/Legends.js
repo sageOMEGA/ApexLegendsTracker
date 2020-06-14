@@ -102,6 +102,12 @@ const ActiveLegend = () => {
     }
   };
 
+  // const RenderLegends = () => {
+  //   for (let i = 1; i <= segments.length; i++) {
+  //     return LegendDiv(i);
+  //   }
+  // };
+
   return (
     <div>
       <div
@@ -112,27 +118,26 @@ const ActiveLegend = () => {
       >
         <div
           style={{
-            display: "flex",
-            marginLeft: "40px",
-            marginRight: "40px",
-            maxWidth: "100%",
+            display: "grid",
+            gridTemplateColumns: "33.33% 33.33% 33.33%",
           }}
         >
+          {/* {segments.map((i) => {
+            return segments[i] ? LegendDiv(i) : null;
+          })} */}
+
           {segments[1] ? LegendDiv(1) : null}
 
           {segments[2] ? LegendDiv(2) : null}
 
           {segments[3] ? LegendDiv(3) : null}
-        </div>
 
-        <div
-          style={{ display: "flex", marginLeft: "40px", marginRight: "40px" }}
-        >
           {segments[4] ? LegendDiv(4) : null}
 
           {segments[5] ? LegendDiv(5) : null}
 
           {segments[6] ? LegendDiv(6) : null}
+          {/* {console.log(segments.length)} */}
         </div>
       </div>
     </div>

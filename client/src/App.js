@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import "./App.css";
 import Navigaton from "./components/layouts/Navigaton";
 import Home from "./components/pages/Home";
 import Gamer from "./components/gamers/Gamer";
