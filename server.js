@@ -7,7 +7,7 @@ const path = require("path");
 //Load ENV
 dotenv.config({ path: "./config.env" });
 
-//Create React App
+//Create Express App
 const app = express();
 
 // CORS
